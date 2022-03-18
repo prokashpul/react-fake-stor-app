@@ -11,14 +11,13 @@ const Products = ({ cartCount }) => {
       .then((res) => res.json())
       .then((data) => setState(data));
   }, []);
-  console.log(products);
   return (
     <div className="container my-5">
       <Row xs={1} md={3} className="g-4">
-        {products.map((product) => (
+        {products?.map((product) => (
           <Product
             product={product}
-            key={product.id}
+            key={product?.id}
             cartCount={cartCount}
           ></Product>
         ))}

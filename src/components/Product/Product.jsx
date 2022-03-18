@@ -5,7 +5,7 @@ import { Button, Col } from "react-bootstrap";
 import Productdetails from "../Productdetails/Productdetails";
 
 const Product = ({ product, cartCount }) => {
-  const { title, category, description, image, price } = product;
+  const { title, category, description, image, price } = product || {};
   return (
     <Col>
       <Card>
