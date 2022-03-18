@@ -3,7 +3,7 @@ import { Row } from "react-bootstrap";
 import Product from "../Product/Product";
 import "./Products.css";
 
-const Products = () => {
+const Products = ({ cartCount }) => {
   const [products, setState] = useState([]);
   useEffect(() => {
     const url = `https://fakestoreapi.com/products`;
@@ -16,7 +16,11 @@ const Products = () => {
     <div className="container my-5">
       <Row xs={1} md={3} className="g-4">
         {products.map((product) => (
-          <Product product={product} key={product.id}></Product>
+          <Product
+            product={product}
+            key={product.id}
+            cartCount={cartCount}
+          ></Product>
         ))}
       </Row>
     </div>

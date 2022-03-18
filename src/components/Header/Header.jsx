@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ count }) => {
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -14,7 +14,7 @@ const Header = () => {
               <Nav.Link href="#features">Home</Nav.Link>
               <Nav.Link href="#pricing">About</Nav.Link>
               <Nav.Link href="#pricing">
-                Cart <sup>(0)</sup>
+                Cart <sup className="text-warning">{count}</sup>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
