@@ -3,11 +3,13 @@ import "./Product.css";
 import Card from "react-bootstrap/Card";
 import { Button, Col } from "react-bootstrap";
 import Productdetails from "../Productdetails/Productdetails";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 const Product = ({ product, cartCount }) => {
   const { title, category, description, image, price } = product || {};
   return (
-    <Col>
+    <Col data-aos="fade-up" data-aos-anchor-placement="center-bottom">
       <Card>
         <Card.Img variant="top" src={image} />
         <Card.Body>
